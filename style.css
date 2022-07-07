@@ -1,0 +1,147 @@
+/* animation duration 3 sec total */
+/* animation time = 33.33% */
+/* animation pause = 33.33% */
+
+.circle {
+}
+
+.dot-1 {
+  width: 150px;
+  height: 150px;
+  background: green;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 50%;
+  /* margin-left: 0%; */
+}
+
+.dot-1-animation-1 {
+  animation-name: moveGreenDownLeft;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+.dot-1-animation-2 {
+  animation-name: moveGreenRightUp;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+.dot-2 {
+  width: 150px;
+  height: 150px;
+  background: red;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 50%;
+  /* margin-left: 450px; */
+}
+
+.dot-2-animation {
+  animation-name: animationRedCircle;
+  animation-duration: 5.5s;
+  /* animation-fill-mode: forwards; */
+}
+
+.dot-3 {
+  margin-right: 0;
+  width: 150px;
+  height: 150px;
+  background: blue;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 50%;
+  /* margin-left: 400px; */
+}
+
+.dot-3-animation {
+  animation-name: animationBlueCircle;
+  animation-duration: 3s;
+  /* animation-fill-mode: forwards; */
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@keyframes moveGreenDownLeft {
+  0% {
+    transform: translateY(0);
+  }
+  33.33% {
+    transform: translateY(80vh);
+  }
+  66.66% {
+    transform: translateY(80vh);
+  }
+  100% {
+    transform: translateX(85vw) translateY(80vh);
+  }
+}
+
+@keyframes moveGreenRightUp {
+  0% {
+    transform: translateX(85vw) translateY(80vh);
+  }
+  /* 33.33% {
+    transform: translateX(-85vw) translateY(80vh);
+  }
+  66.66% {
+    transform: translateX(-85vw) translateY(80vh);
+  } */
+  33.33% {
+    transform: translateY(80vh);
+  }
+  66.66% {
+    transform: translateY(80vh);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* total time 5.5 sec */
+/* animation time1: 1/5.5 * 100 =  18,18*/
+/* animation time2: 36.36 */
+/* pause time: 0.5/5,5 * 100 = 9.09 */
+
+@keyframes animationRedCircle {
+  0% {
+    transform: translateY(0);
+  }
+  18.18% {
+    transform: translateY(80vh);
+  }
+  27.27% {
+    transform: translateY(80vh);
+  }
+  45.45% {
+    transform: translateY(80vh) translateX(-40vw);
+  }
+  54.54% {
+    transform: translateY(80vh) translateX(-40vw);
+  }
+  90.9% {
+    transform: translateY(80vh) translateX(40vw);
+  }
+  100% {
+    transform: translateY(80vh) translateX(40vw);
+  }
+}
+
+@keyframes animationBlueCircle {
+  0% {
+    transform: translateY(0);
+  }
+  33% {
+    transform: translateY(80vh);
+  }
+  66% {
+    transform: translateY(80vh) translateX(-90vw);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
